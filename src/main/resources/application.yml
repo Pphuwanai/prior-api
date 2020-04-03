@@ -1,0 +1,22 @@
+server:
+  servlet:
+    contextPath: /prior-api
+  port: 8080
+spring:
+  profiles:
+    active: dev
+---
+spring:
+  profiles: dev
+  datasource:
+    url: jdbc:sqlserver://prior-sql.cmbcolowaua6.ap-southeast-1.rds.amazonaws.com:1543;databaseName=gpi
+    username: admin
+    password: oOdIYMvWs2uMxYMpLt5Q
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+  jpa:
+    database: sql-server
+    show-sql: false
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_defaults: false

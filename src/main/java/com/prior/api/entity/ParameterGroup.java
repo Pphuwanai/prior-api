@@ -17,6 +17,7 @@ public class ParameterGroup extends BaseDomain{
 	@Column(name="PARAM_GROUP_ID", unique = true, nullable = false)
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
 	private String paramGroup;
 	private String paramEnDescription;
 	private String paramThDescription;

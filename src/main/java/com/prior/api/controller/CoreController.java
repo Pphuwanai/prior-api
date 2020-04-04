@@ -23,12 +23,19 @@ import com.prior.api.service.ParameterService;
 public class CoreController {
 	
 	@Autowired
-	private ParameterService parameterService;
+	private ParameterService parameterService ;
 
 	@GetMapping(value = "getData/{param}")
     public ResponseEntity<?> getData(@PathVariable("param") String param, HttpServletRequest request) throws Exception{
 		
-		List<ParameterGroup> list = parameterService.findAll();
+		List<ParameterGroup> list = null;// parameterService.findAll();
+		
+		ParameterGroup group = parameterService.findByCriteria(param);
+		
+		
+		parameterService.saveToDb();
+		System.out.println("asdsad");
+		System.out.println(list);
 		
 		return ResponseEntity.ok(list);
 	}

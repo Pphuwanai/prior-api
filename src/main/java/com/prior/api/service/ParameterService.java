@@ -17,6 +17,22 @@ public class ParameterService {
 	public List<ParameterGroup> findAll() {
 		return parameterGroupRepository.findAll();
 	}
+
+	public ParameterGroup findByCriteria(String param) {
+		
+		
+		
+		return parameterGroupRepository.findByParamGroupNative(param);
+	}
+
+	public void saveToDb() {
+		ParameterGroup g = new ParameterGroup();
+		g.setParamGroup("ParamGroup");
+		g.setParamThDescription("ParamThDescription");
+		g.setParamEnDescription("ParamEnDescription");
+		
+		parameterGroupRepository.save(g);
+	}
 	
 	
 }
